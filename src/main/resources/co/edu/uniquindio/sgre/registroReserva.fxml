@@ -6,6 +6,8 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -13,6 +15,11 @@
 
 <AnchorPane prefHeight="752.0" prefWidth="1124.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.sgre.viewController.ReservaViewController">
    <children>
+       <ImageView fitHeight="765.0" fitWidth="1146.0" layoutX="-20.0" layoutY="-6.0">
+           <image>
+               <Image url="@../../../../persistencia/imagenes/colorima.png" />
+           </image>
+       </ImageView>
       <Label layoutX="518.0" layoutY="38.0" text="Registro de  Reserva" />
       <TableView fx:id="tablaEventos" layoutX="572.0" layoutY="123.0" prefHeight="200.0" prefWidth="286.0">
         <columns>
@@ -23,9 +30,9 @@
       </TableView>
       <TableView fx:id="tablaReservas" layoutX="333.0" layoutY="436.0" prefHeight="200.0" prefWidth="382.0">
          <columns>
-            <TableColumn fx:id="columIdReserva" prefWidth="55.0" text="Id" />
-            <TableColumn fx:id="columCapReserva" prefWidth="162.0" text="Capacidad" />
-            <TableColumn fx:id="columFecha" prefWidth="70.0" text="Fecha" />
+            <TableColumn fx:id="columIdReserva" prefWidth="81.0" text="Id" />
+            <TableColumn fx:id="columCapReserva" prefWidth="95.0" text="Capacidad" />
+            <TableColumn fx:id="columFecha" prefWidth="111.0" text="Fecha" />
             <TableColumn fx:id="columEstadoReserva" prefWidth="94.0" text="Estado" />
          </columns>
       </TableView>

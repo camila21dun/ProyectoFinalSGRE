@@ -8,21 +8,28 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <AnchorPane prefHeight="752.0" prefWidth="1124.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.sgre.viewController.GestionReserva">
    <children>
+      <ImageView fitHeight="765.0" fitWidth="1146.0">
+         <image>
+            <Image url="@../../../../persistencia/imagenes/colorima.png" />
+         </image>
+      </ImageView>
       <Label layoutX="485.0" layoutY="42.0" text="Gestion de reservas ">
          <font>
             <Font size="24.0" />
          </font></Label>
-      <TableView fx:id="tablaReservas" layoutX="178.0" layoutY="210.0" prefHeight="295.0" prefWidth="445.0">
+      <ComboBox fx:id="cbEstados" layoutX="785.0" layoutY="281.0" prefWidth="150.0" />
+      <Button layoutX="826.0" layoutY="376.0" mnemonicParsing="false" onAction="#actualizarReservaEvent" text="Actualizar" />
+      <TableView fx:id="tablaReservas" layoutX="343.0" layoutY="236.0" prefHeight="200.0" prefWidth="382.0">
          <columns>
-            <TableColumn fx:id="columIdReserva" prefWidth="55.0" text="Id" />
-            <TableColumn fx:id="columCapReserva" prefWidth="88.0" text="Capacidad" />
-            <TableColumn fx:id="columFecha" prefWidth="139.0" text="Fecha" />
-            <TableColumn fx:id="columEstadoReserva" prefWidth="162.0" text="Estado" />
+            <TableColumn fx:id="columIdReserva" prefWidth="81.0" text="Id" />
+            <TableColumn fx:id="columCapReserva" prefWidth="95.0" text="Capacidad" />
+            <TableColumn fx:id="columFecha" prefWidth="111.0" text="Fecha" />
+            <TableColumn fx:id="columEstadoReserva" prefWidth="94.0" text="Estado" />
          </columns>
       </TableView>
-      <ComboBox fx:id="cbEstados" layoutX="736.0" layoutY="252.0" prefWidth="150.0" />
-      <Button layoutX="777.0" layoutY="403.0" mnemonicParsing="false" onAction="#actualizarReservaEvent" text="Actualizar" />
    </children>
 </AnchorPane>

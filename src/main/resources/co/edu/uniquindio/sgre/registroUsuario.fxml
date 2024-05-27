@@ -2,50 +2,121 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="ventana" prefHeight="752.0" prefWidth="1124.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.sgre.viewController.UsuarioViewController">
     <children>
-        <SplitPane dividerPositions="0.6007130124777184" layoutX="5.0" orientation="VERTICAL" prefHeight="752.0" prefWidth="1124.0">
+        <SplitPane layoutX="5.0" orientation="VERTICAL" prefHeight="752.0" prefWidth="1124.0">
             <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="752.0" prefWidth="1124.0">
                     <children>
-                        <Label layoutX="138.0" layoutY="74.0" text="Nombres:" />
-                        <Label layoutX="144.0" layoutY="109.0" text="Cédula:" />
-                        <TextField fx:id="txtNombre" layoutX="243.0" layoutY="70.0" prefHeight="25.0" prefWidth="251.0" promptText="Ingrese el nombre" />
-                        <TextField fx:id="txtCedula" layoutX="243.0" layoutY="105.0" prefHeight="25.0" prefWidth="251.0" promptText="ingrese la cedula" />
-                        <Label layoutX="145.0" layoutY="142.0" text="Correo:" />
-                        <TextField fx:id="txtCorreo" layoutX="243.0" layoutY="137.0" prefHeight="27.0" prefWidth="251.0" promptText="ingrese el correo" />
-                        <Button fx:id="btnActualizar" layoutX="533.0" layoutY="294.0" mnemonicParsing="false" onAction="#actualizarUsuarioAction" prefHeight="27.0" prefWidth="100.0" text="Actualizar" />
-                        <Button fx:id="btnNuevo" layoutX="83.0" layoutY="294.0" mnemonicParsing="false" onAction="#nuevoUsuarioAction" prefHeight="27.0" prefWidth="100.0" text="Nuevo" />
-                        <Button fx:id="btnAgregar" layoutX="298.0" layoutY="294.0" mnemonicParsing="false" onAction="#agregarUsuarioAction" prefHeight="27.0" prefWidth="100.0" text="Agregar" />
-                        <Separator layoutX="13.0" layoutY="273.0" prefHeight="6.0" prefWidth="711.0" />
-                  <Label layoutX="298.0" layoutY="30.0" text="Registro de Usuario">
+                    <ImageView fitHeight="765.0" fitWidth="1146.0" opacity="0.53">
+                        <image>
+                            <Image url="@../../../../persistencia/imagenes/inicoSesion.jpg" />
+                        </image>
+                    </ImageView>
+                  <Label layoutX="187.0" layoutY="33.0" text="Registro de Usuario">
                      <font>
-                        <Font size="14.0" />
+                        <Font size="24.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="txtUsuario" layoutX="243.0" layoutY="171.0" prefHeight="27.0" prefWidth="251.0" promptText="ingrese el correo" />
-                  <TextField fx:id="txtContrasenia" layoutX="243.0" layoutY="206.0" prefHeight="27.0" prefWidth="251.0" promptText="ingrese el correo" />
-                  <Label layoutX="143.0" layoutY="176.0" text="Usuario:" />
-                  <Label layoutX="133.0" layoutY="211.0" text="Contraseña:" />
-                    </children></AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="752.0" prefWidth="1124.0">
-                    <children>
-                        <TableView fx:id="tableUsuarios" layoutX="199.0" layoutY="14.0" prefHeight="138.0" prefWidth="308.0">
+                        <Button fx:id="btnActualizar" layoutX="997.0" layoutY="383.0" mnemonicParsing="false" onAction="#actualizarUsuarioAction" prefHeight="27.0" prefWidth="100.0" text="Actualizar" visible="false" />
+                        <Button fx:id="btnNuevo" layoutX="26.0" layoutY="459.0" mnemonicParsing="false" onAction="#nuevoUsuarioAction" prefHeight="35.0" prefWidth="78.0" text="Nuevo">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+                        <Button fx:id="btnAgregar" layoutX="242.0" layoutY="500.0" mnemonicParsing="false" onAction="#agregarUsuarioAction" prefHeight="27.0" prefWidth="100.0" text="Agregar">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+                        <TableView fx:id="tableUsuarios" layoutX="712.0" layoutY="582.0" prefHeight="138.0" prefWidth="308.0" visible="false">
                             <columns>
                                 <TableColumn fx:id="tcNombre" prefWidth="90.0" text="Nombre" />
                                 <TableColumn fx:id="tcCedula" prefWidth="89.0" text="Cédula" />
                                 <TableColumn fx:id="tcCorreo" prefWidth="128.0" text="Correo" />
                             </columns>
                         </TableView>
-                        <Button fx:id="btnEliminar" layoutX="318.0" layoutY="160.0" mnemonicParsing="false" onAction="#eliminarUsuarioAction" prefHeight="27.0" prefWidth="100.0" text="Eliminar" />
+                        <Button fx:id="btnEliminar" layoutX="979.0" layoutY="301.0" mnemonicParsing="false" onAction="#eliminarUsuarioAction" prefHeight="27.0" prefWidth="100.0" text="Eliminar" visible="false" />
+                  <GridPane layoutX="149.0" layoutY="130.0" prefHeight="299.0" prefWidth="299.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                              <Label text="Nombres:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                              <TextField fx:id="txtNombre" prefHeight="25.0" prefWidth="251.0" promptText="Ingrese el nombre" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                              <Label text="Cédula:" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                              <TextField fx:id="txtCedula" prefHeight="25.0" prefWidth="251.0" promptText="ingrese la cedula" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                              <Label text="Correo:" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                              <TextField fx:id="txtCorreo" prefHeight="27.0" prefWidth="251.0" promptText="ingrese el correo" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label text="Usuario:" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtUsuario" prefHeight="27.0" prefWidth="251.0" promptText="ingrese el usuario" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label text="Contraseña:" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtContrasenia" prefHeight="27.0" prefWidth="251.0" promptText="ingrese el contraseña" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </GridPane>
+                  <Button layoutX="28.0" layoutY="563.0" mnemonicParsing="false" onAction="#volverEvent" text="Volver">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
                     </children></AnchorPane>
             </items>
         </SplitPane>

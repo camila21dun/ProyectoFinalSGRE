@@ -14,8 +14,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class UsuarioViewController {
     UsuarioController usuarioControllerService;
@@ -281,8 +285,18 @@ public class UsuarioViewController {
     public void registrarAccionesSistema(String mensaje, int nivel, String accion) {
         Persistencia.guardaRegistroLog(mensaje, nivel, accion);
     }
-    
-    
-    
+
+    @FXML
+    void volverEvent(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/sgre/login.fxml"));
+        Parent loginRoot = fxmlLoader.load();
+        Scene loginScene = new Scene(loginRoot);
+        Stage loginStage = new Stage();
+        loginStage.setTitle("Login");
+        loginStage.setScene(loginScene);
+        loginStage.show();
+        Stage currentStage = (Stage) ventana.getScene().getWindow();
+        currentStage.close();
+    }
 
 }

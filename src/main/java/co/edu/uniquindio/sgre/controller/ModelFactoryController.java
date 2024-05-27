@@ -11,7 +11,6 @@ import co.edu.uniquindio.sgre.mapping.mappers.SGREMapper;
 import co.edu.uniquindio.sgre.model.*;
 import co.edu.uniquindio.sgre.utils.Persistencia;
 import co.edu.uniquindio.sgre.utils.SGREUtils;
-//import lombok.Setter;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -38,29 +37,30 @@ public class ModelFactoryController implements IModelFactoryController {
     public ModelFactoryController() {
         //1. inicializar datos y luego guardarlo en archivos
         System.out.println("invocación clase singleton");
-       //cargarDatosBase();
-      // salvarDatosPrueba();
+        //cargarDatosBase();
+        //salvarDatosPrueba();
 
         //2. Cargar los datos de los archivos
-        cargarDatosDesdeArchivos();
+        //cargarDatosDesdeArchivos();
 
         //3. Guardar y Cargar el recurso serializable binario
-	    //cargarResourceBinario();
+        cargarResourceBinario();
         guardarResourceBinario();
 
         guardarResourceBinarioEventos();
         guardarResourceBinarioReservas();
 
         //4. Guardar y Cargar el recurso serializable XML
-        //   cargarResourceXML();
-		//guardarResourceXML();
+        // cargarResourceXML();
+        // guardarResourceXML();
 
-        if(sgre == null){
+        if (sgre == null) {
             cargarDatosBase();
-         //  guardarResourceXML();
+            // guardarResourceXML();
         }
         registrarAccionesSistema("Inicio de sesión", 1, "inicioSesión");
     }
+
     private void cargarDatosDesdeArchivos() {
         sgre = new SGRE();
         try {
@@ -82,9 +82,6 @@ public class ModelFactoryController implements IModelFactoryController {
         }
     }
 
-
-
-
     private void cargarDatosBase() {
         sgre = SGREUtils.inicializarDatos();
     }
@@ -99,13 +96,13 @@ public class ModelFactoryController implements IModelFactoryController {
 
     @Override
     public List<EmpleadoDto> obtenerEmpleados() {
-        return  mapper.getEmpleadosDto(sgre.getListaEmpleados());
+        return mapper.getEmpleadosDto(sgre.getListaEmpleados());
     }
 
     @Override
     public boolean agregarEmpleado(EmpleadoDto empleadoDto) {
-        try{
-            if(!sgre.verificarEmpleadoExistente(empleadoDto.id())) {
+        try {
+            if (!sgre.verificarEmpleadoExistente(empleadoDto.id())) {
                 Empleado empleado = mapper.empleadoDtoToEmpleado(empleadoDto);
                 getSGRE().agregarEmpleado(empleado);
                 guardarResourceBinario();
@@ -113,11 +110,8 @@ public class ModelFactoryController implements IModelFactoryController {
                 guardarListaEmpleados(getSGRE().getListaEmpleados());
             }
             return true;
-        }catch (EmpleadoException e){
+        } catch (EmpleadoException e) {
             e.getMessage();
-            return false;
-        }catch (IOException e2){
-            e2.getMessage();
             return false;
         }
     }
@@ -130,7 +124,6 @@ public class ModelFactoryController implements IModelFactoryController {
             guardarResourceBinario();
             guardarResourceXML();
         } catch (EmpleadoException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return flagExiste;
@@ -150,17 +143,15 @@ public class ModelFactoryController implements IModelFactoryController {
         }
     }
 
-    /////////////
-
     @Override
     public List<UsuarioDto> obtenerUsuario() {
-        return  mapper.getUsuariosDto(sgre.getListaUsuarios());
+        return mapper.getUsuariosDto(sgre.getListaUsuarios());
     }
 
     @Override
     public boolean agregarUsuario(UsuarioDto usuarioDto) {
-        try{
-            if(!sgre.verificarUsuarioExistente(usuarioDto.id())) {
+        try {
+            if (!sgre.verificarUsuarioExistente(usuarioDto.id())) {
                 Usuario usuario = mapper.usuarioToUsuarioDto(usuarioDto);
                 getSGRE().agregarUsuario(usuario);
                 guardarResourceBinario();
@@ -168,9 +159,6 @@ public class ModelFactoryController implements IModelFactoryController {
                 guardarListaUsuario(getSGRE().getListaUsuarios());
             }
             return true;
-        }catch (IOException e2){
-            e2.getMessage();
-            return false;
         } catch (UsuarioException e) {
             throw new RuntimeException(e);
         }
@@ -204,8 +192,6 @@ public class ModelFactoryController implements IModelFactoryController {
         }
     }
 
-    ////////////////
-
     @Override
     public List<EventoDto> obtenerEventos() {
         return mapper.getEventosDto(sgre.getListaEventos());
@@ -213,21 +199,14 @@ public class ModelFactoryController implements IModelFactoryController {
 
     @Override
     public boolean agregarEvento(EventoDto eventoDto) {
-        try {
-            if (!sgre.verificarEventoExistente(eventoDto.id())) {
-                Evento evento = mapper.eventoDtoToEvento(eventoDto);
-                getSGRE().agregarEvento(evento);
-
-                guardarResourceBinario();
-
-                guardarResourceXML();
-                guardarListaEventos(getSGRE().getListaEventos());
-            }
-            return true;
-        } catch (IOException e) {
-            e.getMessage();
-            return false;
+        if (!sgre.verificarEventoExistente(eventoDto.id())) {
+            Evento evento = mapper.eventoDtoToEvento(eventoDto);
+            getSGRE().agregarEvento(evento);
+            guardarResourceBinario();
+            guardarResourceXML();
+            guardarListaEventos(getSGRE().getListaEventos());
         }
+        return true;
     }
 
     @Override
@@ -257,25 +236,6 @@ public class ModelFactoryController implements IModelFactoryController {
         }
     }
 
-
-
-    private void guardarResourceBinarioEventos() {
-        try {
-            Persistencia.guardarEventos(getSGRE().getListaEventos());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    private void guardarResourceBinarioReservas() {
-        try {
-            Persistencia.guardarReservas(getSGRE().getListaReservas());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    /////
-
     @Override
     public List<ReservaDto> obtenerReservas() {
         return mapper.getReservasDto(sgre.getListaReservas());
@@ -287,14 +247,12 @@ public class ModelFactoryController implements IModelFactoryController {
             if (!sgre.verificarReservaExistente(reservaDto.id())) {
                 Reserva reserva = mapper.reservaDtoToReserva(reservaDto);
                 sgre.agregarReserva(reserva);
-
                 guardarResourceBinario();
                 guardarResourceXML();
-
                 guardarListaReservas(sgre.getListaReservas());
             }
             return true;
-        } catch (IOException | EmpleadoException e) {
+        } catch (EmpleadoException e) {
             e.getMessage();
             return false;
         }
@@ -327,54 +285,95 @@ public class ModelFactoryController implements IModelFactoryController {
         }
     }
 
-    private void guardarListaReservas(ArrayList<Reserva> listaReservas) throws IOException {
-        Persistencia.guardarReservas(listaReservas);
+    private void guardarResourceBinario() {
+        Thread thread = new Thread(() -> {
+            Persistencia.guardarRecursoBancoBinario(sgre);
+        });
+        thread.start();
     }
 
+    private void guardarResourceBinarioEventos() {
+        Thread thread = new Thread(() -> {
+            try {
+                Persistencia.guardarEventos(getSGRE().getListaEventos());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        thread.start();
+    }
 
+    private void guardarResourceBinarioReservas() {
+        Thread thread = new Thread(() -> {
+            try {
+                Persistencia.guardarReservas(getSGRE().getListaReservas());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        thread.start();
+    }
+
+    private void guardarListaEmpleados(ArrayList<Empleado> listaEmpleados) {
+        Thread thread = new Thread(() -> {
+            try {
+                Persistencia.guardarEmpleados(listaEmpleados);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        thread.start();
+    }
+
+    private void guardarListaUsuario(ArrayList<Usuario> listaUsuario) {
+        Thread thread = new Thread(() -> {
+            try {
+                Persistencia.guardarUsuarios(listaUsuario);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        thread.start();
+    }
+
+    private void guardarListaEventos(ArrayList<Evento> listaEventos) {
+        Thread thread = new Thread(() -> {
+            try {
+                Persistencia.guardarEventos(listaEventos);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        thread.start();
+    }
+
+    private void guardarListaReservas(ArrayList<Reserva> listaReservas) {
+        Thread thread = new Thread(() -> {
+            try {
+                Persistencia.guardarReservas(listaReservas);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        thread.start();
+    }
 
     private void cargarResourceXML() {
         sgre = Persistencia.cargarRecursoBancoXML();
     }
-  /*  private void cargarEventos() throws IOException {
-        sgre=Persistencia.cargarEventos();
-    }
-
-   */
 
     private void guardarResourceXML() {
-        Persistencia.guardarRecursoBancoXML(sgre);
+        Thread thread = new Thread(() -> {
+            Persistencia.guardarRecursoBancoXML(sgre);
+        });
+        thread.start();
     }
 
     private void cargarResourceBinario() {
         sgre = Persistencia.cargarRecursoBancoBinario();
     }
 
-    private void guardarResourceBinario() {
-        Persistencia.guardarRecursoBancoBinario(sgre);
-    }
-
-
-
-    private void guardarListaEmpleados(ArrayList<Empleado> listaEmpleados) throws  IOException{
-        Persistencia.guardarEmpleados(listaEmpleados);
-    }
-
-    private void guardarListaUsuario(ArrayList<Usuario> listaUsuario) throws  IOException{
-        Persistencia.guardarUsuarios(listaUsuario);
-    }
-    private void guardarListaEventos(ArrayList<Evento> listaEventos) throws IOException {
-        Persistencia.guardarEventos(listaEventos);
-    }
-
     public void registrarAccionesSistema(String mensaje, int nivel, String accion) {
         Persistencia.guardaRegistroLog(mensaje, nivel, accion);
     }
-
-
-    // Usuario
-
-
-
-
 }

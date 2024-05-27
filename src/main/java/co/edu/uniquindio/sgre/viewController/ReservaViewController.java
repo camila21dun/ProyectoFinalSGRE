@@ -88,20 +88,47 @@ public class ReservaViewController {
 
     @FXML
     void reservaEvent(ActionEvent event) throws EmpleadoException {
+        if (validarCedula()) {
+            actualizarClienteAction();
+        }
+
+    }
+
+    private void actualizarClienteAction() {
         ReservaDto reservaDto = construirReservaDto();
         if (datosValidos(reservaDto)) {
 
-                if (reservaControllerService.agregarReserva(reservaDto)) {
-                    listaReservaDto.add(reservaDto);
-                    mostrarMensaje("Notificación reserva", "Reserva creada", "La reserva se ha creado con éxito", Alert.AlertType.INFORMATION);
-                    limpiarCamposReserva();
-                } else {
-                    mostrarMensaje("Notificación reserva", "Reserva no creada", "La reserva no se ha creado", Alert.AlertType.ERROR);
-                }
+            if (reservaControllerService.agregarReserva(reservaDto)) {
+                listaReservaDto.add(reservaDto);
+                mostrarMensaje("Notificación reserva", "Reserva creada", "La reserva se ha creado con éxito", Alert.AlertType.INFORMATION);
+                limpiarCamposReserva();
+            } else {
+                mostrarMensaje("Notificación reserva", "Reserva no creada", "La reserva no se ha creado", Alert.AlertType.ERROR);
+            }
         } else {
             mostrarMensaje("Notificación reserva", "Reserva no creada", "Los datos ingresados son inválidos", Alert.AlertType.ERROR);
         }
         registrarAccionesSistema("Crear reserva", 1, "se creó la reserva " + reservaDto);
+    }
+
+
+
+    private boolean validarCedula() {
+        String cedulaIngresada = txtIdUsuario.getText();
+        String cedulaUsuario = SessionManager.getInstance().getUsuario().getId();
+
+        if (!cedulaIngresada.equals(cedulaUsuario)) {
+            mostrarAlerta("La cédula ingresada no coincide con la del usuario que inició sesión.");
+            return false;
+        }
+
+        return true;
+    }
+    private void mostrarAlerta(String mensaje) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        alert.show();
     }
 
 

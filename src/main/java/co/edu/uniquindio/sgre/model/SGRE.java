@@ -242,42 +242,7 @@ public class SGRE implements ISGREService, Serializable {
 
         return usuarioEncontrado;
     }
-/*
-    public boolean verificarClienteAdministrador(String cedula, String contrasena) throws EmpleadoException {
-        if (cedula.isEmpty()) {
-            throw new EmpleadoException("Usuario vacío");
-        }
-        if (contrasena.isEmpty()) {
-            throw new EmpleadoException("Contraseña vacía");
-        }
 
-        Admin admin = obtenerAdministrador(cedula);
-        if (admin != null && admin.getContrasenia().equals(contrasena)) {
-            return true;
-        }
-
-        Usuario usuario = obtenerUsuario(cedula);
-        if (usuario != null && usuario.getContrasenia().equals(contrasena)) {
-            return true;
-        }
-
-        Empleado empleado = obtenerEmpleado(cedula);
-        if (empleado != null && empleado.getContrasenia().equals(contrasena)) {
-            return true;
-        }
-        return false;
-    }
-    public boolean verificarEmpleado(String usuario, String contrasenia) {
-
-        for (Empleado empleado : listaEmpleados) {
-            if (empleado.getUsuario().equals(usuario) && empleado.getContrasenia().equals(contrasenia)) {
-                return true;
-            }
-        }
-        return false; // Credenciales inválidas
-    }
-
- */
 
     public boolean verificarAdmin(String usuario, String contrasenia) {
         for (Admin admin : listaAdmins) {
@@ -286,6 +251,20 @@ public class SGRE implements ISGREService, Serializable {
             }
         }
         return false;
+    }
+    public Admin obtenerAdmin(String usuario) {
+        Admin empleadoEncontrado = null;
+        Iterator var3 = this.getListaAdmins().iterator();
+
+        while(var3.hasNext()) {
+            Admin empleado = (Admin) var3.next();
+            if (empleado.getUsuario().equalsIgnoreCase(usuario)) {
+                empleadoEncontrado = empleado;
+                break;
+            }
+        }
+
+        return empleadoEncontrado;
     }
 
     public boolean verificarUser(String usuario, String contrasenia) {
@@ -381,7 +360,7 @@ public class SGRE implements ISGREService, Serializable {
         if (reservaExiste) {
             throw new EmpleadoException("La reserva con ID: " + id + " ya existe");
         } else {
-            nuevaReserva = new Reserva(id, capacidad, usuario, evento, fecha, estado);
+            nuevaReserva = new Reserva(id, capacidad, evento, fecha, estado);
             this.getListaReservas().add(nuevaReserva);
             return nuevaReserva;
         }

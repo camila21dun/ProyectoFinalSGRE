@@ -16,16 +16,17 @@
 
 <AnchorPane fx:id="ventana" prefHeight="752.0" prefWidth="1124.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.sgre.viewController.LoginViewController">
    <children>
-      <ImageView fitHeight="765.0" fitWidth="1146.0" layoutX="-20.0" layoutY="-6.0">
+      <ImageView fitHeight="765.0" fitWidth="1146.0" layoutX="-20.0" layoutY="-6.0" opacity="0.67">
          <image>
             <Image url="@../../../../persistencia/imagenes/inicio.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="btnInicio" layoutX="520.0" layoutY="289.0" mnemonicParsing="false" onAction="#inicioSesionEvent" text="Iniciar Sesion ">
+
+      <Button fx:id="btnInicio" layoutX="519.0" layoutY="283.0" mnemonicParsing="false" onAction="#inicioSesionEvent" text="Iniciar Sesion ">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <GridPane layoutX="460.0" layoutY="167.0" prefHeight="122.0" prefWidth="208.0">
+      <GridPane layoutX="460.0" layoutY="161.0" prefHeight="122.0" prefWidth="208.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -69,10 +70,15 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Label layoutX="482.0" layoutY="98.0" text="Inicio de sesion">
+      <Label layoutX="482.0" layoutY="35.0" text="Inicio de sesion">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="513.0" layoutY="70.0" opacity="0.72">
+         <image>
+            <Image url="@../../../../persistencia/imagenes/UsuarioFoto.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

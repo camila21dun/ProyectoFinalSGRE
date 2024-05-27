@@ -6,58 +6,56 @@ import co.edu.uniquindio.sgre.model.Usuario;
 
 public class SessionManager {
     private static SessionManager instance;
-    private Usuario usuarioActivo;
-    private Admin adminActivo;
-    private Empleado empleadoActivo;
+    private Admin admin;
+    private Empleado empleado;
+    private Usuario usuario;
+    private String userType;
 
-    private SessionManager() {
+    private SessionManager() {}
 
-    }
-
-    public static SessionManager getInstance() {
+    public static synchronized SessionManager getInstance() {
         if (instance == null) {
             instance = new SessionManager();
         }
         return instance;
     }
 
-    public void setEmpleado(Empleado empleado) {
-        this.empleadoActivo = empleado;
-    }
-
-    public Empleado getEmpleado() {
-        return empleadoActivo;
-    }
-
-
-    public void setUsuario(Usuario usuario) {
-        this.usuarioActivo = usuario;
-    }
-
-
-
-    public Usuario getUsuario() {
-        return usuarioActivo;
+    public Admin getAdmin() {
+        return admin;
     }
 
     public void setAdmin(Admin admin) {
-        this.adminActivo = admin;
+        this.admin = admin;
     }
 
-    public Admin getAdmin() {
-        return adminActivo;
+    public Empleado getEmpleado() {
+        return empleado;
     }
 
-    public boolean isUserLoggedIn() {
-        return usuarioActivo != null;
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
     }
 
-    public boolean isAdminLoggedIn() {
-        return adminActivo != null;
+    public Usuario getUsuario() {
+        return usuario;
+    }
+    public Usuario getUsuario2() {
+        return usuario;
     }
 
-    public void cerrarSesion() {
-        usuarioActivo = null;
-        adminActivo = null;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public void setUsuario2(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 }

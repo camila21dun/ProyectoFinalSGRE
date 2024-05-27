@@ -6,6 +6,8 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -18,6 +20,11 @@
             <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="752.0" prefWidth="1124.0">
                     <children>
+                    <ImageView fitHeight="765.0" fitWidth="1146.0">
+                        <image>
+                            <Image url="@../../../../persistencia/imagenes/colorima.png" />
+                        </image>
+                    </ImageView>
                   <Label layoutX="301.0" layoutY="41.0" text="Registro de Empleado">
                      <font>
                         <Font size="14.0" />

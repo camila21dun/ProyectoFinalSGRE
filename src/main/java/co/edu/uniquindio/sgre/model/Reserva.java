@@ -26,13 +26,18 @@ public class Reserva implements Serializable {
     public Reserva() {
     }
 
-    public Reserva(String id, String capacidad, Usuario usuario, Evento evento, LocalDate fecha, Estado estado) {
+    public Reserva(String id, String capacidad, Evento evento, LocalDate fecha, Estado estado) {
         this.id = id;
         this.capacidad = capacidad;
-        this.usuario = usuario;
+     //   this.usuario = usuario;
         this.evento = evento;
         this.fecha = fecha;
         this.estado = estado;
+    }
+
+    public Reserva(Estado estado) {
+        this.estado = estado;
+
     }
 
     public String getCapacidad() {

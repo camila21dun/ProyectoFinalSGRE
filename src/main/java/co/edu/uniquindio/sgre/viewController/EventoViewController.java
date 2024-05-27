@@ -90,18 +90,6 @@ public class EventoViewController {
         eventoControllerService = new EventoController();
         empleadoControllerService = new EmpleadoController();
         intiView();
-        /*
-        dateFecha.setDayCellFactory(picker -> new DateCell() {
-            public void updateItem(LocalDate date, boolean empty) {
-                super.updateItem(date, empty);
-                if (date.isBefore(LocalDate.now().plusDays(1))) {
-                    setDisable(true);
-                    setStyle("-fx-background-color: #ffc0cb;");
-                }
-            }
-        });
-
-         */
     }
 
 

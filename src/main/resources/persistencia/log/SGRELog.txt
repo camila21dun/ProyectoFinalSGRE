@@ -768,3 +768,145 @@ may. 19, 2024 10:40:22 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarReg
 INFO: se creó el evento EventoDto[id=3, nombre=Taller , descripcion=Taller práctico zzz, fecha=2024-06-28, capMax=6655, empleadoAsignadoId=Empleado(id=125454, nombre=juan, email=juab@gmail.com)],Crear evento,2024-05-19
 may. 19, 2024 10:40:44 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
 INFO: inicioSesión,Inicio de sesión,2024-05-19
+may. 25, 2024 10:21:28 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-25
+may. 26, 2024 11:36:19 A. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 11:58:11 A. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 11:58:35 A. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: se limpiaron los campos,Limpiar campos de la reserva,2024-05-26
+may. 26, 2024 11:58:35 A. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: se creó la reserva ReservaDto[id=125, capacidad=22, eventoId=Evento{id='3', nombre='Taller ', descripcion='null', fecha=null, capMax='6655', empleadoAsignado=null}, fecha=2024-05-28, estado=PENDIENTE],Crear reserva,2024-05-26
+may. 26, 2024 12:27:20 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 12:28:35 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 12:44:50 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 12:45:52 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 12:49:51 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 12:54:03 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 12:57:27 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 1:00:34 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 1:01:01 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 3:01:09 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 3:31:36 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 3:34:09 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 3:34:54 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 3:36:29 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 4:25:22 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 4:27:46 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 4:30:37 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 4:36:28 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 4:36:52 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: Se actualizó la reserva 11,Actualizar reserva,2024-05-26
+may. 26, 2024 4:38:34 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 4:39:55 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 4:40:19 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: se limpiaron los campos,Limpiar campos de la reserva,2024-05-26
+may. 26, 2024 4:40:19 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: se creó la reserva ReservaDto[id=12521, capacidad=11, eventoId=Evento{id='2', nombre='Clase de Cocina Rápida', descripcion='null', fecha=null, capMax='35', empleadoAsignado=null}, fecha=2024-05-28, estado=PENDIENTE],Crear reserva,2024-05-26
+may. 26, 2024 4:42:41 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 4:44:02 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: se creo en empleado EmpleadoDto[id=11111, nombre=Camila, email=camila21dun@gmail.com, usuario=12, contrasenia=12],Crear empleado,2024-05-26
+may. 26, 2024 4:44:17 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: Se actualizó el empleado false,Actualizar empleado,2024-05-26
+may. 26, 2024 4:45:17 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 4:46:24 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 4:46:46 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: se creo en empleado EmpleadoDto[id=, nombre=, email=, usuario=, contrasenia=],Crear empleado,2024-05-26
+may. 26, 2024 4:46:54 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: se elimino el empleado ,Eliminar empleado,2024-05-26
+may. 26, 2024 4:47:12 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: se creo en empleado EmpleadoDto[id=111, nombre=Cami, email=cam21dun@gmail.com, usuario=111, contrasenia=111],Crear empleado,2024-05-26
+may. 26, 2024 4:50:53 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 4:51:19 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: se creo en empleado EmpleadoDto[id=111, nombre=Camila, email=cam21dun@gmail.com, usuario=111, contrasenia=111],Crear empleado,2024-05-26
+may. 26, 2024 4:51:28 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: se creo en empleado EmpleadoDto[id=111, nombre=Camil, email=cam21dun@gmail.com, usuario=111, contrasenia=111],Crear empleado,2024-05-26
+may. 26, 2024 4:51:41 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: se creo en empleado EmpleadoDto[id=1111, nombre=Camil, email=cam21dun@gmail.com, usuario=111, contrasenia=111],Crear empleado,2024-05-26
+may. 26, 2024 4:52:37 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 5:01:59 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 5:06:35 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 9:40:57 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 9:41:49 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: Se actualizó la reserva 55,Actualizar reserva,2024-05-26
+may. 26, 2024 9:42:16 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 9:52:31 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 9:55:42 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 9:56:33 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 9:56:45 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: Se actualizó la reserva ,Actualizar reserva,2024-05-26
+may. 26, 2024 9:56:51 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: Se actualizó la reserva ,Actualizar reserva,2024-05-26
+may. 26, 2024 9:57:09 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 10:26:37 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 10:28:23 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 10:38:59 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 10:50:52 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 10:54:02 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 10:55:50 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 10:57:05 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: se creó el evento EventoDto[id=5, nombre=Taller de origami, descripcion=Figuras de animales , fecha=2024-05-27, capMax=15, empleadoAsignadoId=null],Crear evento,2024-05-26
+may. 26, 2024 10:57:11 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: se limpiaron los campos,Limpiar campos de evento,2024-05-26
+may. 26, 2024 10:57:11 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: se creó el evento EventoDto[id=5, nombre=Taller de origami, descripcion=Figuras de animales , fecha=2024-05-27, capMax=15, empleadoAsignadoId=Empleado(id=13579, nombre=Julieta, email=cam21dun@gmail.com)],Crear evento,2024-05-26
+may. 26, 2024 10:57:33 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: Se actualizó la reserva ,Actualizar reserva,2024-05-26
+may. 26, 2024 10:58:10 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 10:58:49 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 11:05:15 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 11:18:37 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 11:19:14 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 11:19:49 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: se creo en usuario con id: 10101, nombre: sofia,Crear usuario,2024-05-26
+may. 26, 2024 11:20:46 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
+may. 26, 2024 11:21:24 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: se creo en usuario con id: 101011, nombre: Sofia,Crear usuario,2024-05-26
+may. 26, 2024 11:39:40 P. M. co.edu.uniquindio.sgre.utils.ArchivoUtil guardarRegistroLog
+INFO: inicioSesión,Inicio de sesión,2024-05-26
