@@ -158,7 +158,9 @@ public class EmpleadoViewController {
         Empleado empleadoActualizad = new Empleado(
                 txtCedula.getText(),
                 txtNombre.getText(),
-                txtCorreo.getText()
+                txtCorreo.getText(),
+                txtUser.getText(),
+                txtContrasenia.getText()
 
         );
 

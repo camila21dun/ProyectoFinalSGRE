@@ -22,6 +22,14 @@ public class Empleado implements Serializable {
     private String contrasenia;
     private Evento evento;
     private RolEmpleado rolEmpleado;
+    public Empleado(String id, String nombre, String email, String usuario, String contrasenia) {
+        this.id = id;
+        this.nombre = nombre;
+        this.email = email;
+        this.usuario = usuario;
+        this.contrasenia = contrasenia;
+
+    }
 
     public Empleado(String id, String nombre, String email, String usuario, String contrasenia, Evento evento, RolEmpleado rolEmpleado) {
         this.id = id;
@@ -32,6 +40,8 @@ public class Empleado implements Serializable {
         this.evento = evento;
         this.rolEmpleado = rolEmpleado;
     }
+
+
 
     public static EmpleadoBuilder builder() {
         return new EmpleadoBuilder();

@@ -127,7 +127,7 @@ public class SGREUtils {
         sgre.getListaEventos().add(evento4);
 
         Evento evento5 = new Evento();
-        evento5.setId("1");
+        evento5.setId("5");
         evento5.setNombre("Proyección de Cortometrajes");
         evento5.setDescripcion("Serie de cortos de cine en una sesión de una hora.");
         evento5.setFecha(LocalDate.now().plusDays(23));
@@ -136,7 +136,7 @@ public class SGREUtils {
         sgre.getListaEventos().add(evento1);
 
         Evento evento6 = new Evento();
-        evento6.setId("2");
+        evento6.setId("6");
         evento6.setNombre("Clase de Cocina Rápida");
         evento6.setDescripcion("Aprende a preparar una receta sencilla en 45 minutos.");
         evento6.setFecha(LocalDate.now().plusMonths(13));
@@ -146,7 +146,7 @@ public class SGREUtils {
 
 
         Reserva reserva1 = new Reserva();
-        reserva1.setId("11");
+        reserva1.setId("12767");
         reserva1.setEvento(evento1);
         reserva1.setUsuario(usuario);
         reserva1.setCapacidad("5");
@@ -155,7 +155,7 @@ public class SGREUtils {
         sgre.getListaReservas().add(reserva1);
 
         Reserva reserva2 = new Reserva();
-        reserva2.setId("22");
+        reserva2.setId("12522");
         reserva2.setEvento(evento2);
         reserva2.setUsuario(usuario);
         reserva2.setCapacidad("10");
@@ -164,7 +164,7 @@ public class SGREUtils {
         sgre.getListaReservas().add(reserva2);
 
         Reserva reserva3 = new Reserva();
-        reserva3.setId("33");
+        reserva3.setId("12767");
         reserva3.setEvento(evento1);
         reserva3.setUsuario(usuario);
         reserva3.setCapacidad("2");
@@ -173,7 +173,7 @@ public class SGREUtils {
         sgre.getListaReservas().add(reserva3);
 
         Reserva reserva4 = new Reserva();
-        reserva4.setId("44");
+        reserva4.setId("12521");
         reserva4.setEvento(evento2);
         reserva4.setUsuario(usuario);
         reserva4.setCapacidad("1");
@@ -182,7 +182,7 @@ public class SGREUtils {
         sgre.getListaReservas().add(reserva4);
 
         Reserva reserva5 = new Reserva();
-        reserva5.setId("55");
+        reserva5.setId("12521");
         reserva5.setEvento(evento1);
         reserva5.setUsuario(usuario);
         reserva5.setCapacidad("13");

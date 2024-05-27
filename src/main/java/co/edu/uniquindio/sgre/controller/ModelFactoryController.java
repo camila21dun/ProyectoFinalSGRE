@@ -2,6 +2,7 @@ package co.edu.uniquindio.sgre.controller;
 
 import co.edu.uniquindio.sgre.controller.service.IModelFactoryController;
 import co.edu.uniquindio.sgre.exceptions.EmpleadoException;
+import co.edu.uniquindio.sgre.exceptions.ReservaException;
 import co.edu.uniquindio.sgre.exceptions.UsuarioException;
 import co.edu.uniquindio.sgre.mapping.dto.EmpleadoDto;
 import co.edu.uniquindio.sgre.mapping.dto.EventoDto;
@@ -46,13 +47,12 @@ public class ModelFactoryController implements IModelFactoryController {
         //3. Guardar y Cargar el recurso serializable binario
         cargarResourceBinario();
         guardarResourceBinario();
-
         guardarResourceBinarioEventos();
         guardarResourceBinarioReservas();
 
         //4. Guardar y Cargar el recurso serializable XML
-        // cargarResourceXML();
-        // guardarResourceXML();
+         //cargarResourceXML();
+         guardarResourceXML();
 
         if (sgre == null) {
             cargarDatosBase();
@@ -104,17 +104,21 @@ public class ModelFactoryController implements IModelFactoryController {
         try {
             if (!sgre.verificarEmpleadoExistente(empleadoDto.id())) {
                 Empleado empleado = mapper.empleadoDtoToEmpleado(empleadoDto);
+                System.out.println("Empleado a agregar: " + empleado);
                 getSGRE().agregarEmpleado(empleado);
                 guardarResourceBinario();
                 guardarResourceXML();
                 guardarListaEmpleados(getSGRE().getListaEmpleados());
+                return true;
+            } else {
+                throw new EmpleadoException("Empleado ya existe");
             }
-            return true;
         } catch (EmpleadoException e) {
-            e.getMessage();
+            e.printStackTrace();
             return false;
         }
     }
+
 
     @Override
     public boolean eliminarEmpleado(String cedula) {
@@ -244,19 +248,22 @@ public class ModelFactoryController implements IModelFactoryController {
     @Override
     public boolean agregarReserva(ReservaDto reservaDto) {
         try {
-            if (!sgre.verificarReservaExistente(reservaDto.id())) {
-                Reserva reserva = mapper.reservaDtoToReserva(reservaDto);
-                sgre.agregarReserva(reserva);
-                guardarResourceBinario();
-                guardarResourceXML();
-                guardarListaReservas(sgre.getListaReservas());
-            }
+            System.out.println("Intentando agregar reserva...");
+            Reserva reserva = mapper.reservaDtoToReserva(reservaDto);
+            sgre.agregarReserva(reserva);
+            System.out.println("Reserva agregada a sgre. Procediendo a guardar recursos...");
+            guardarResourceBinario();
+            guardarResourceXML();
+            guardarListaReservas(sgre.getListaReservas());
+            System.out.println("Recursos guardados.");
             return true;
-        } catch (EmpleadoException e) {
-            e.getMessage();
-            return false;
+        } catch (ReservaException e) {
+            System.err.println("Error al agregar reserva: " + e.getMessage());
+            throw new RuntimeException(e);
         }
     }
+
+
 
     @Override
     public boolean eliminarReserva(String id) {
@@ -339,7 +346,9 @@ public class ModelFactoryController implements IModelFactoryController {
     private void guardarListaEventos(ArrayList<Evento> listaEventos) {
         Thread thread = new Thread(() -> {
             try {
+                System.out.println("Intentando guardar evento...");
                 Persistencia.guardarEventos(listaEventos);
+                System.out.println("Evento guardado correctamente.");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -348,15 +357,21 @@ public class ModelFactoryController implements IModelFactoryController {
     }
 
     private void guardarListaReservas(ArrayList<Reserva> listaReservas) {
+        System.out.println("Entrando en guardarListaReservas...");
         Thread thread = new Thread(() -> {
             try {
+                System.out.println("Intentando guardar reservas en nuevo hilo...");
                 Persistencia.guardarReservas(listaReservas);
+                System.out.println("Reservas guardadas correctamente.");
             } catch (IOException e) {
+                System.err.println("Error al guardar reservas: " + e.getMessage());
                 e.printStackTrace();
             }
         });
         thread.start();
     }
+
+
 
     private void cargarResourceXML() {
         sgre = Persistencia.cargarRecursoBancoXML();

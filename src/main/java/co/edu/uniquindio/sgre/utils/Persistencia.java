@@ -77,19 +77,22 @@ public class Persistencia {
      * @param
      * @throws IOException
      */
-
+/*
     public static void guardarEmpleados(ArrayList<Empleado> listaEmpleados) throws IOException {
-        String contenido = "";
-        for(Empleado empleado:listaEmpleados)
-        {
-            contenido+= empleado.getId()+
-                    "@@"+empleado.getNombre()+
-                    "@@"+empleado.getEmail()+
-                    "@@"+empleado.getUsuario()+
-                    "@@"+empleado.getContrasenia()+"\n";
+        StringBuilder contenido = new StringBuilder();
+        for (Empleado empleado : listaEmpleados) {
+            contenido.append(empleado.getId())
+                    .append("@@").append(empleado.getNombre())
+                    .append("@@").append(empleado.getEmail())
+                    .append("@@").append(empleado.getUsuario())
+                    .append("@@").append(empleado.getContrasenia())
+                    .append("\n");
         }
-        ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_EMPLEADOS, contenido, false);
+        ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_EMPLEADOS, contenido.toString(), false);
     }
+
+ */
+
 
     public static void guardarUsuarios(ArrayList<Usuario> listaUsuarios) throws IOException {
         String contenido = "";
@@ -118,23 +121,36 @@ public class Persistencia {
      */
 
 
+    public static void guardarEmpleados(ArrayList<Empleado> listaEmpleados) throws IOException {
+        String contenido = "";
+        for (Empleado empleado : listaEmpleados) {
+            contenido += empleado.getId() + "@@" +
+                    empleado.getNombre() + "@@" +
+                    empleado.getEmail() + "@@" +
+                    empleado.getUsuario() + "@@" +
+                    empleado.getContrasenia() + "\n";
+        }
+        ArchivoUtil.guardarArchivo(RUTA_ARCHIVO_EMPLEADOS, contenido, false);
+    }
+
+
     public static ArrayList<Empleado> cargarEmpleados() throws FileNotFoundException, IOException {
-        ArrayList<Empleado> empleados =new ArrayList<Empleado>();
+        ArrayList<Empleado> empleados = new ArrayList<>();
         ArrayList<String> contenido = ArchivoUtil.leerArchivo(RUTA_ARCHIVO_EMPLEADOS);
-        String linea="";
-        for (int i = 0; i < contenido.size(); i++)
-        {
-            linea = contenido.get(i);
+        for (String linea : contenido) {
+            String[] datos = linea.split("@@");
             Empleado empleado = new Empleado();
-            empleado.setId(linea.split("@@")[0]);
-            empleado.setNombre(linea.split("@@")[1]);
-            empleado.setEmail(linea.split("@@")[2]);
-            empleado.setUsuario(linea.split("@@")[3]);
-            empleado.setContrasenia(linea.split("@@")[4]);
+            empleado.setId(datos[0]);
+            empleado.setNombre(datos[1]);
+            empleado.setEmail(datos[2]);
+            empleado.setUsuario(datos[3]);
+            empleado.setContrasenia(datos[4]);
             empleados.add(empleado);
         }
         return empleados;
     }
+
+
     public static ArrayList<Usuario> cargarUsuarios() throws FileNotFoundException, IOException {
         ArrayList<Usuario> empleados =new ArrayList<Usuario>();
         ArrayList<String> contenido = ArchivoUtil.leerArchivo(RUTA_ARCHIVO_USUARIOS);
@@ -581,17 +597,22 @@ public class Persistencia {
         ArrayList<Reserva> reservas = new ArrayList<>();
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(RUTA_ARCHIVO_RESERVA_BINARIO))) {
             reservas = (ArrayList<Reserva>) ois.readObject();
+            System.out.println("Reservas cargadas exitosamente.");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
+            System.out.println("El archivo de reservas no existe, creando uno nuevo.");
         }
         return reservas;
     }
 
     public static void guardarReservas(ArrayList<Reserva> listaReservas) throws IOException {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(RUTA_ARCHIVO_RESERVA_BINARIO))) {
+            System.out.println("Escribiendo reservas al archivo...");
             oos.writeObject(listaReservas);
+            System.out.println("Reservas escritas exitosamente en el archivo.");
         }
     }
+
 
     public static void eliminarReserva(String idReserva) throws IOException {
         ArrayList<Reserva> reservas = cargarReservas();

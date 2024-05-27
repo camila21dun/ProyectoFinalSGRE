@@ -297,6 +297,12 @@ public class UsuarioViewController {
         loginStage.show();
         Stage currentStage = (Stage) ventana.getScene().getWindow();
         currentStage.close();
+        registrarAccionesSistema("Volver a inicio", 1, "Se volvio a el inicio ");
+
     }
+
+
+
+
 
 }

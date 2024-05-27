@@ -12,6 +12,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="752.0" prefWidth="1124.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.sgre.viewController.ReservaViewController">
    <children>
@@ -20,15 +21,18 @@
                <Image url="@../../../../persistencia/imagenes/colorima.png" />
            </image>
        </ImageView>
-      <Label layoutX="518.0" layoutY="38.0" text="Registro de  Reserva" />
-      <TableView fx:id="tablaEventos" layoutX="572.0" layoutY="123.0" prefHeight="200.0" prefWidth="286.0">
+      <Label layoutX="464.0" layoutY="24.0" text="Registro de  Reserva">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <TableView fx:id="tablaEventos" layoutX="655.0" layoutY="123.0" prefHeight="200.0" prefWidth="286.0">
         <columns>
           <TableColumn fx:id="columIdEvento" prefWidth="55.0" text="Id" />
           <TableColumn fx:id="columNombreEvento" prefWidth="162.0" text="Nombre " />
             <TableColumn fx:id="columCapEvento" prefWidth="70.0" text="Capacidad" />
         </columns>
       </TableView>
-      <TableView fx:id="tablaReservas" layoutX="333.0" layoutY="436.0" prefHeight="200.0" prefWidth="382.0">
+      <TableView fx:id="tablaReservas" layoutX="343.0" layoutY="449.0" prefHeight="200.0" prefWidth="382.0">
          <columns>
             <TableColumn fx:id="columIdReserva" prefWidth="81.0" text="Id" />
             <TableColumn fx:id="columCapReserva" prefWidth="95.0" text="Capacidad" />
@@ -37,8 +41,11 @@
          </columns>
       </TableView>
       <Label layoutX="132.0" layoutY="173.0" />
-      <Label layoutX="677.0" layoutY="89.0" text="Eventos disponibles " />
-      <GridPane layoutX="178.0" layoutY="140.0" prefHeight="83.0" prefWidth="222.0">
+      <Label layoutX="725.0" layoutY="89.0" text="Eventos disponibles ">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <GridPane layoutX="166.0" layoutY="123.0" prefHeight="171.0" prefWidth="335.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -49,15 +56,27 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Fecha:" />
-            <Label text="Capacidad:" GridPane.rowIndex="1" />
+            <Label text="Fecha:">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label text="Cantidad:" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
             <DatePicker fx:id="dateFecha" GridPane.columnIndex="1" />
-            <TextField fx:id="txtcapacidad" prefHeight="22.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label text="Id usuario:" GridPane.rowIndex="2" />
-            <TextField fx:id="txtIdUsuario" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtcapacidad" prefHeight="22.0" prefWidth="100.0" promptText="ingrese cantidad" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Contraseña usuario:" GridPane.rowIndex="2">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <TextField fx:id="txtIdUsuario" promptText="ingrese su contraseña" GridPane.columnIndex="1" GridPane.rowIndex="2" />
          </children>
       </GridPane>
-      <Button layoutX="301.0" layoutY="277.0" mnemonicParsing="false" onAction="#reservaEvent" text="Reservar" />
+      <Button layoutX="286.0" layoutY="308.0" mnemonicParsing="false" onAction="#reservaEvent" text="Reservar">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
       <Button layoutX="819.0" layoutY="524.0" mnemonicParsing="false" onAction="#cancelarEvent" text="Cancelar" />
    </children>
 </AnchorPane>

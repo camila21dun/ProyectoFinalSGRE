@@ -54,8 +54,8 @@
          </children>
       </GridPane>
       <Button fx:id="btnActualizar" layoutX="255.0" layoutY="470.0" mnemonicParsing="false" onAction="#actualizarUserEvent" text="Actualizar" />
-      <Button layoutX="451.0" layoutY="692.0" mnemonicParsing="false" onAction="#EliminarEvent" text="Eliminar" />
-      <Button layoutX="42.0" layoutY="692.0" mnemonicParsing="false" onAction="#volverEvent" text="Volver" />
+      <Button layoutX="423.0" layoutY="566.0" mnemonicParsing="false" onAction="#EliminarEvent" text="Eliminar" />
+      <Button layoutX="26.0" layoutY="566.0" mnemonicParsing="false" onAction="#volverEvent" text="Volver" />
       <Label layoutX="198.0" layoutY="106.0" text="Actualizar Datos">
          <font>
             <Font size="18.0" />
@@ -71,6 +71,5 @@
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Button layoutX="1017.0" layoutY="30.0" mnemonicParsing="false" onAction="#cerrarSesionEvent" text="Cerrar Sesion" />
    </children>
 </AnchorPane>

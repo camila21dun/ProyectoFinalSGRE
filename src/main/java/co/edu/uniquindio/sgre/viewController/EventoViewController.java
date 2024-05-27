@@ -167,12 +167,15 @@ public class EventoViewController {
 
     private boolean datosValidos(EventoDto eventoDto) {
         String mensaje = "";
+
         if (eventoDto.nombre() == null || eventoDto.nombre().equals(""))
             mensaje += "El nombre es obligatorio \n";
         if (eventoDto.id() == null || eventoDto.id().equals(""))
             mensaje += "El id es obligatorio \n";
+        else if (idEventoExiste(eventoDto.id()))
+            mensaje += "El id ya está asignado a otro evento \n";
         if (eventoDto.descripcion() == null || eventoDto.descripcion().equals(""))
-            mensaje += "La descripción es obligatorio \n";
+            mensaje += "La descripción es obligatoria \n";
         if (eventoDto.empleadoAsignadoId() == null)
             mensaje += "Debe seleccionar un empleado \n";
         if (eventoDto.fecha() == null || eventoDto.fecha().isBefore(LocalDate.now().plusDays(1)))
@@ -184,6 +187,10 @@ public class EventoViewController {
             mostrarMensaje("Notificación evento", "Datos inválidos", mensaje, Alert.AlertType.WARNING);
             return false;
         }
+    }
+
+    private boolean idEventoExiste(String id) {
+        return listaEventosDto.stream().anyMatch(evento -> evento.id().equals(id));
     }
 
 

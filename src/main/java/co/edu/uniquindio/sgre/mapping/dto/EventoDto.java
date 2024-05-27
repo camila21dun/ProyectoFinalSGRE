@@ -12,4 +12,5 @@ public record EventoDto (
         String capMax,
         Empleado empleadoAsignadoId) {
 
-        }
+
+}

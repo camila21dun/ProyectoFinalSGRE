@@ -1,6 +1,8 @@
 package co.edu.uniquindio.sgre.model;
 
+import co.edu.uniquindio.sgre.exceptions.AdminException;
 import co.edu.uniquindio.sgre.exceptions.EmpleadoException;
+import co.edu.uniquindio.sgre.exceptions.ReservaException;
 import co.edu.uniquindio.sgre.exceptions.UsuarioException;
 import co.edu.uniquindio.sgre.model.services.ISGREService;
 import co.edu.uniquindio.sgre.viewController.SessionManager;
@@ -173,11 +175,12 @@ public class SGRE implements ISGREService, Serializable {
     }
 
     public boolean actualizarUsuario(String id, Usuario usuario) throws UsuarioException {
+        System.out.println("Actualizando usuario con ID: " + id);
         Usuario usuarioActual = this.obtenerUsuario(id);
         if (usuarioActual == null) {
             throw new UsuarioException("El usuario a actualizar no existe");
         } else {
-            usuarioActual.setId(usuario.getId());
+            System.out.println("Usuario encontrado: " + usuarioActual.getId());
             usuarioActual.setNombre(usuario.getNombre());
             usuarioActual.setEmail(usuario.getEmail());
             usuarioActual.setUsuario(usuario.getUsuario());
@@ -185,6 +188,7 @@ public class SGRE implements ISGREService, Serializable {
             return true;
         }
     }
+
 
     public Boolean eliminarUsuario(String id) throws UsuarioException {
         Usuario usuario = null;
@@ -198,6 +202,15 @@ public class SGRE implements ISGREService, Serializable {
             return flagExiste;
         }
     }
+    public Usuario obtenerUsuarioPorId(String id) {
+        for (Usuario usuario : this.getListaUsuarios()) {
+            if (usuario.getId().equalsIgnoreCase(id)) {
+                return usuario;
+            }
+        }
+        return null;
+    }
+
 
     public  Usuario obtenerUsuario(String user) {
         Usuario usuarioEncontrado = null;
@@ -354,11 +367,11 @@ public class SGRE implements ISGREService, Serializable {
 
     ///////
 
-    public Reserva crearReserva(String id, String capacidad, Usuario usuario, Evento evento, LocalDate fecha, Estado estado) throws EmpleadoException {
+    public Reserva crearReserva(String id, String capacidad, Usuario usuario, Evento evento, LocalDate fecha, Estado estado) throws ReservaException {
         Reserva nuevaReserva = null;
         boolean reservaExiste = this.verificarReservaExistente(id);
         if (reservaExiste) {
-            throw new EmpleadoException("La reserva con ID: " + id + " ya existe");
+            throw new ReservaException("La reserva con ID: " + id + " ya existe");
         } else {
             nuevaReserva = new Reserva(id, capacidad, evento, fecha, estado);
             this.getListaReservas().add(nuevaReserva);
@@ -366,10 +379,7 @@ public class SGRE implements ISGREService, Serializable {
         }
     }
 
-    public void agregarReserva(Reserva nuevaReserva) throws EmpleadoException {
-        if (verificarReservaExistente(nuevaReserva.getId())) {
-            throw new EmpleadoException("La reserva con ID: " + nuevaReserva.getId() + " ya existe");
-        }
+    public void agregarReserva(Reserva nuevaReserva) throws ReservaException {
         this.getListaReservas().add(nuevaReserva);
     }
 

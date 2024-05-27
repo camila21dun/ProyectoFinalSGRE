@@ -7,14 +7,14 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <AnchorPane fx:id="ventana" prefHeight="752.0" prefWidth="1124.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.sgre.viewController.EventoViewController">
    <children>
        <ImageView fitHeight="765.0" fitWidth="1146.0" layoutX="-20.0" layoutY="-6.0">
@@ -22,7 +22,7 @@
                <Image url="@../../../../persistencia/imagenes/colorima.png" />
            </image>
        </ImageView>
-      <GridPane layoutX="61.0" layoutY="69.0" prefHeight="180.0" prefWidth="254.0">
+      <GridPane layoutX="172.0" layoutY="96.0" prefHeight="235.0" prefWidth="344.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -33,47 +33,65 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Label text="Id:" />
-            <Label text="Nombre:" GridPane.rowIndex="1" />
-            <Label text="Descripcion:" GridPane.rowIndex="2" />
-            <Label text="Fecha:" GridPane.rowIndex="3" />
-            <Label text="Cap max:" GridPane.rowIndex="4" />
-            <TextField fx:id="txtId" GridPane.columnIndex="1" />
-            <TextField fx:id="txtNombre" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="txtDescripcion" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Descripcion:" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label text="Fecha:" GridPane.rowIndex="3">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label text="Cap max:" GridPane.rowIndex="4">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <TextField fx:id="txtDescripcion" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="txtCapMax" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <DatePicker fx:id="dateFecha" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Nombre:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtNombre" GridPane.columnIndex="1" />
+            <Label text="Id:" GridPane.rowIndex="2">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtId" GridPane.columnIndex="1" GridPane.rowIndex="2" />
          </children>
       </GridPane>
-      <Label layoutX="315.0" layoutY="14.0" text="Registro de Evento">
+      <Label layoutX="463.0" layoutY="24.0" text="Registro de Evento">
          <font>
-            <Font size="14.0" />
+            <Font size="24.0" />
          </font>
       </Label>
-      <TableView fx:id="tablaEmpleados" layoutX="412.0" layoutY="97.0" prefHeight="125.0" prefWidth="204.0">
+      <TableView fx:id="tablaEmpleados" layoutX="747.0" layoutY="159.0" prefHeight="209.0" prefWidth="200.0">
          <columns>
-            <TableColumn fx:id="columNombreEmpleado" prefWidth="75.0" text="Nombre" />
-            <TableColumn fx:id="columIdEmpleado" prefWidth="128.0" text="Id" />
+            <TableColumn fx:id="columNombreEmpleado" prefWidth="98.0" text="Nombre" />
+            <TableColumn fx:id="columIdEmpleado" prefWidth="105.0" text="Id" />
          </columns>
       </TableView>
-      <Button layoutX="268.0" layoutY="257.0" mnemonicParsing="false" onAction="#agregarEvent" text="Agregar" />
-      <Label layoutX="448.0" layoutY="59.0" text="Empleados disponibles ">
+      <Button layoutX="311.0" layoutY="331.0" mnemonicParsing="false" onAction="#agregarEvent" text="Agregar">
          <font>
-            <Font size="14.0" />
+            <Font size="18.0" />
+         </font></Button>
+      <Label layoutX="753.0" layoutY="109.0" text="Empleados disponibles ">
+         <font>
+            <Font size="18.0" />
          </font>
       </Label>
-      <Separator layoutX="61.0" layoutY="302.0" prefHeight="5.0" prefWidth="606.0" />
-      <TableView fx:id="tablaEventos" layoutX="80.0" layoutY="373.0" prefHeight="163.0" prefWidth="323.0">
+      <TableView fx:id="tablaEventos" layoutX="392.0" layoutY="449.0" prefHeight="226.0" prefWidth="323.0">
         <columns>
           <TableColumn fx:id="columIdEvento" prefWidth="75.0" text="Id" />
           <TableColumn fx:id="columNombreEvento" prefWidth="178.0" text="nombre" />
             <TableColumn fx:id="columCapEvento" prefWidth="69.0" text="capacidad" />
         </columns>
       </TableView>
-      <GridPane layoutX="505.0" layoutY="365.0" prefHeight="134.0" prefWidth="76.0">
+      <GridPane layoutX="747.0" layoutY="476.0" prefHeight="134.0" prefWidth="97.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
@@ -83,13 +101,34 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" onAction="#ActualizarEvent" text="Actualizar" />
-            <Button mnemonicParsing="false" onAction="#EliminarEvent" text="Eliminar" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" onAction="#CancelarEvent" text="Cancelar" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#ActualizarEvent" text="Actualizar">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#EliminarEvent" text="Eliminar" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#CancelarEvent" text="Cancelar" visible="false" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <Button fx:id="btnLimpiar" layoutX="61.0" layoutY="257.0" mnemonicParsing="false" onAction="#limpiarEvent" text="Limpiar" />
-      <TextField fx:id="txtBuscar" layoutX="89.0" layoutY="323.0" />
-      <Button fx:id="btnBuscar" layoutX="272.0" layoutY="323.0" mnemonicParsing="false" onAction="#buscarEvent" text="Buscar" />
+      <Button fx:id="btnLimpiar" layoutX="49.0" layoutY="331.0" mnemonicParsing="false" onAction="#limpiarEvent" text="Limpiar">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <TextField fx:id="txtBuscar" layoutX="430.0" layoutY="413.0">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <Button fx:id="btnBuscar" layoutX="626.0" layoutY="413.0" mnemonicParsing="false" onAction="#buscarEvent" text="Buscar">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Separator layoutX="76.0" layoutY="375.0" prefHeight="0.0" prefWidth="913.0" />
+      <Label layoutX="517.0" layoutY="378.0" text="Consulta">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
